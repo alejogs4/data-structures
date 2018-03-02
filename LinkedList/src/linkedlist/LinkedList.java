@@ -5,12 +5,14 @@
  */
 package linkedlist;
 
+import java.util.Iterator;
+
 /**
  * Clase que encapsula las diferentes acciones de una lista enlazada
  * @author ochoscar
  * @param <T> Tipo generico que contra los item de la lista
  */
-public class LinkedList<T> implements IList<T> {
+public class LinkedList<T> implements IList<T>,Iterable<T> {
     
     ////////////////////
     // Atributos
@@ -275,6 +277,29 @@ public class LinkedList<T> implements IList<T> {
             }
         }        
         return this;
+    }
+    
+    
+    /**
+     * Metodo que devuelve un iterador
+     * @return 
+     */
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            Node<T> itr = first;
+            @Override
+            public boolean hasNext() {
+                return itr != null;
+            }
+
+            @Override
+            public T next() {
+                T item = itr.getItem();
+                itr = itr.getNext();
+                return item;
+            }
+        };
     }
 }
     

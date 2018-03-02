@@ -17,6 +17,9 @@ public class API {
         personsList.add(p1);
         personsList.add(p2);
         personsList.add(p2);
+        
+        personsList.remove(0);
+        System.out.print(personsList.toString());
     }
     
 }

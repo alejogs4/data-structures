@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package linkedlist;
 
 /**
  * Clase principal para la prueba de las listas enlazadas
- * @author ochoscar
+ * @author alejandro Garcia Serna
  */
 public class LinkedListMain {
 
@@ -28,7 +23,12 @@ public class LinkedListMain {
         
         people.addLast(p1).addLast(p2).addLast(p2).addLast(p1).addLast(p3).deleteRepeat();
         
-        System.out.print(people.toString());
+        //System.out.print(people.toString());
+        System.out.println(System.currentTimeMillis());
+        
+        for(Person p : people) {
+            System.out.println(p);
+        }
     }
     
 }
