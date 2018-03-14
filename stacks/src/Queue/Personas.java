@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package queue;
+package Queue;
 
 /**
  *
  * @author s115e17
  */
-public class Personas {
+public class Personas implements Comparable<Personas> {
     
     ////////////////////
     // Atributos ///////
@@ -20,6 +20,8 @@ public class Personas {
     
     /** Nombre de la persona (incluye apellidos) */
     private String name;
+    
+    private int age;
     
     ////////////////////
     // Metodos
@@ -37,9 +39,10 @@ public class Personas {
      * @param pId Id de la persona a crear
      * @param pName Nombre de la persona a crear
      */
-    public Personas(Long pId, String pName) {
+    public Personas(Long pId, String pName,int age) {
         id = pId;
         name = pName;
+        this.age = age; 
     }
     
     /**
@@ -49,6 +52,7 @@ public class Personas {
     public Personas(Personas pCopy) {
         id = pCopy.getId();
         name = pCopy.getName();
+        this.age = pCopy.getAge();
     }
     
     /**
@@ -102,5 +106,16 @@ public class Personas {
      */
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public int compareTo(Personas o) {
+        if(this.getAge() == o.getAge()) return 0;
+        if(age > o.getAge()) return 1;
+        return -1;
     }
 }

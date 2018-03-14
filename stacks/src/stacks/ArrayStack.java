@@ -36,7 +36,7 @@ public class ArrayStack<T> implements IStack<T> {
     
     private void redim(int capacity) {
         T newArray[] = (T[]) new Object[capacity];
-        for(int i = 0;i< array.length;i++){
+        for(int i = 0 ; i< array.length;i++){
             newArray[i] = array[i];
         }
         array = newArray;

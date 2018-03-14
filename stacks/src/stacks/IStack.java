@@ -9,7 +9,7 @@ public interface IStack<T> {
     
     public int size();
     
-    public LinkedStack<T> push(T item);
+    public IStack<T> push(T item);
     
     public T pop();
     
