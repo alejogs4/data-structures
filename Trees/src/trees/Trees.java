@@ -37,6 +37,8 @@ public class Trees {
         System.out.println(bt.levelOrder());
         bt.insert("Q");
         bt.insert("X");
+        hanoi(8, "A", "B", "C");
+        System.out.println(sum(16));
 
         //System.out.println(reverse(str,str.length() -1 ,""));
        
@@ -51,5 +53,23 @@ public class Trees {
             return reverse(str,length - 1,reversed);
         }
     }
+        
+    static void hanoi(int numberOfTower,String origin,String aux,String destinity) {
+        if(numberOfTower > 0) {
+            hanoi(numberOfTower - 1,origin,destinity,aux);
+            System.out.println(numberOfTower + " de " + origin + " hasta " + destinity);
+            hanoi(numberOfTower - 1,aux,origin,destinity);
+        }
+    }
+    
+    static int sum(int num) {
+        if(num < 10) {
+            return num;
+        }
+        return num + sum(num % 10);
+
+    }
+    
+    
     
 }
